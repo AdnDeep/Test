@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Pakari: chocolate orgánico de cacao fino de aroma, hecho en Ecuador de la semilla a la barra.">
+  <title>Pakari · Chocolate de Ecuador</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de chocolate reutilizable (el color del envoltorio sale de --wrap) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="choc" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#6b3a22"/>
+        <stop offset="1" stop-color="#3b1d10"/>
+      </linearGradient>
+      <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+        <stop offset=".5" stop-color="#fff" stop-opacity=".18"/>
+        <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <symbol id="bar" viewBox="0 0 200 320">
+      <rect x="10" y="6" width="180" height="300" rx="10" fill="url(#choc)"/>
+      <g fill="#000" fill-opacity=".22">
+        <rect x="22" y="18" width="74" height="52" rx="5"/><rect x="104" y="18" width="74" height="52" rx="5"/>
+        <rect x="22" y="78" width="74" height="52" rx="5"/><rect x="104" y="78" width="74" height="52" rx="5"/>
+      </g>
+      <g fill="#fff" fill-opacity=".07">
+        <rect x="26" y="22" width="66" height="10" rx="4"/><rect x="108" y="22" width="66" height="10" rx="4"/>
+        <rect x="26" y="82" width="66" height="10" rx="4"/><rect x="108" y="82" width="66" height="10" rx="4"/>
+      </g>
+      <path d="M4 130 L196 118 L196 314 Q196 318 192 318 L8 318 Q4 318 4 314 Z" fill="currentColor"/>
+      <path d="M4 130 L196 118 L196 126 L4 138 Z" fill="#000" fill-opacity=".15"/>
+      <rect x="4" y="118" width="192" height="200" fill="url(#shine)"/>
+      <text x="100" y="215" text-anchor="middle" fill="#fff" font-family="-apple-system, Helvetica, Arial" font-weight="700" font-size="30" letter-spacing="4">PAKARI</text>
+      <text x="100" y="245" text-anchor="middle" fill="#fff" fill-opacity=".8" font-family="-apple-system, Helvetica, Arial" font-size="13" letter-spacing="2">ECUADOR</text>
+    </symbol>
+  </svg>
+
+  <!-- Navegación translúcida estilo Apple -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="Pakari inicio">Pakari</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#origen">Origen</a>
+        <a href="#sabores">Sabores</a>
+        <a href="#detalles">Detalles</a>
+        <a href="#comprar">Comprar</a>
+      </nav>
+      <button class="cart" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow reveal">Nuevo · Raw 70%</p>
+      <h1 class="reveal">Cacao puro.<br>Nada más.</h1>
+      <p class="lead reveal">Chocolate orgánico de cacao Arriba Nacional, hecho en Ecuador de la semilla a la barra.</p>
+      <div class="ctas reveal">
+        <a href="#comprar" class="btn">Comprar</a>
+        <a href="#origen" class="link">Más información ›</a>
+      </div>
+      <div class="hero-art reveal">
+        <svg class="bar bar-hero" style="--wrap:#1d1d1f"><use href="#bar"/></svg>
+      </div>
+    </section>
+
+    <!-- Origen (sección oscura) -->
+    <section class="dark" id="origen">
+      <div class="wrap">
+        <p class="eyebrow reveal">Origen</p>
+        <h2 class="reveal">De la semilla<br>a la barra.</h2>
+        <p class="lead reveal">Trabajamos con familias productoras de Ecuador. Fermentamos, tostamos y moldeamos aquí mismo, donde crece el cacao.</p>
+        <div class="stats">
+          <div class="stat reveal"><span class="num" data-count="100">100</span><span class="unit">%</span><p>Ingredientes orgánicos</p></div>
+          <div class="stat reveal"><span class="num" data-count="3">3</span><p>Ingredientes en la Raw 70%</p></div>
+          <div class="stat reveal"><span class="num">1</span><p>Origen: Ecuador</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sabores: carrusel horizontal en móvil, grid en escritorio -->
+    <section id="sabores">
+      <div class="wrap">
+        <p class="eyebrow reveal">Sabores</p>
+        <h2 class="reveal">Elige tu barra.</h2>
+      </div>
+      <div class="flavors" id="flavors">
+        <article class="card reveal" style="--wrap:#1d1d1f">
+          <svg class="bar"><use href="#bar"/></svg>
+          <h3>Raw 70%</h3><p>Flor de cítricos, jazmín y nueces.</p>
+          <div class="card-foot"><span class="price">$4.99</span><button class="btn small add" data-name="Raw 70%">Añadir</button></div>
+        </article>
+        <article class="card reveal" style="--wrap:#7a1f1f">
+          <svg class="bar"><use href="#bar"/></svg>
+          <h3>Raw 100%</h3><p>Intenso, con notas de frutas y especias.</p>
+          <div class="card-foot"><span class="price">$5.49</span><button class="btn small add" data-name="Raw 100%">Añadir</button></div>
+        </article>
+        <article class="card reveal" style="--wrap:#c2185b">
+          <svg class="bar"><use href="#bar"/></svg>
+          <h3>Sal rosa y nibs</h3><p>60% cacao con sal rosa y trozos crujientes.</p>
+          <div class="card-foot"><span class="price">$4.99</span><button class="btn small add" data-name="Sal rosa y nibs">Añadir</button></div>
+        </article>
+        <article class="card reveal" style="--wrap:#e08a00">
+          <svg class="bar"><use href="#bar"/></svg>
+          <h3>Uvilla</h3><p>Uvilla andina deshidratada. Ácida y dulce.</p>
+          <div class="card-foot"><span class="price">$5.29</span><button class="btn small add" data-name="Uvilla">Añadir</button></div>
+        </article>
+        <article class="card reveal" style="--wrap:#2e7d32">
+          <svg class="bar"><use href="#bar"/></svg>
+          <h3>Guayusa</h3><p>Hoja amazónica con toques de té verde.</p>
+          <div class="card-foot"><span class="price">$5.29</span><button class="btn small add" data-name="Guayusa">Añadir</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Detalles en tarjetas tipo "bento" -->
+    <section class="soft" id="detalles">
+      <div class="wrap">
+        <p class="eyebrow reveal">Detalles</p>
+        <h2 class="reveal">Hecho con cuidado.</h2>
+        <div class="bento">
+          <div class="tile tile-big reveal">
+            <h3>Cacao fino de aroma</h3>
+            <p>Variedad Arriba Nacional, nativa de Ecuador, reconocida por sus notas florales.</p>
+          </div>
+          <div class="tile reveal"><span class="icon">🌱</span><h3>Orgánico</h3><p>Sin pesticidas ni químicos.</p></div>
+          <div class="tile reveal"><span class="icon">🤝</span><h3>Comercio directo</h3><p>Pago justo a los productores.</p></div>
+          <div class="tile reveal"><span class="icon">🌾</span><h3>Sin gluten</h3><p>Apto para dietas veganas.</p></div>
+          <div class="tile reveal"><span class="icon">♻️</span><h3>Empaque reciclable</h3><p>Papel y cartón certificado.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compra -->
+    <section class="buy" id="comprar">
+      <div class="wrap">
+        <h2 class="reveal">La caja de degustación.</h2>
+        <p class="lead reveal">Los 5 sabores en una caja. Envío gratis a todo el país.</p>
+        <div class="buy-art reveal">
+          <svg class="bar fan f1" style="--wrap:#1d1d1f"><use href="#bar"/></svg>
+          <svg class="bar fan f2" style="--wrap:#c2185b"><use href="#bar"/></svg>
+          <svg class="bar fan f3" style="--wrap:#e08a00"><use href="#bar"/></svg>
+        </div>
+        <p class="price-big reveal">$24.99</p>
+        <a href="#" class="btn big add reveal" data-name="Caja de degustación">Comprar ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Precios de ejemplo. Página de muestra para desarrollo.</p>
+      <p>© 2026 Pakari. Hecho en Ecuador.</p>
+    </div>
+  </footer>
+
+  <!-- Barra de compra fija (solo móvil) -->
+  <div class="sticky-buy" id="stickyBuy">
+    <div><strong>Caja de degustación</strong><span>$24.99</span></div>
+    <a href="#comprar" class="btn small">Comprar</a>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
