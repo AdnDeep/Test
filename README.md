@@ -14,8 +14,8 @@ Abre `index.html` en el navegador.
 ## Próximos pasos
 
 1. Poner una foto real del producto en lugar del emoji 🍫.
-2. Agregar la sección "Origen".
-3. Agregar la sección "Sabores".
+2. ~~Agregar la sección "Origen".~~ Hecho.
+3. ~~Agregar la sección "Sabores".~~ Hecho.
 4. Agregar la sección "Comprar".
 
 ## Repositorios de referencia (estilo Apple)
